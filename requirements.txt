@@ -1,0 +1,8 @@
+eth-account
+eth-hash
+eth-keyfile
+eth-rlp
+eth-utils
+pycryptodome
+pytest
+web3

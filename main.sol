@@ -10,6 +10,9 @@ contract NameIndex {
     // Address of the required token contract
     address public requiredToken;
 
+    // event everytime someone uses the function set
+    event NameSet(address indexed sender, string name);
+
     constructor(address _requiredToken) {
         requiredToken = _requiredToken;
     }
@@ -24,6 +27,9 @@ contract NameIndex {
 
         // Transfer the received token to the Ethereum burn address
         ERC20(requiredToken).transfer(address(0x000000000000000000000000000000000000dEaD), 1);
+
+        // Emit the NameSet event
+        emit NameSet(msg.sender, _text);
     }
 
     // Implement the receive function to receive token transfers

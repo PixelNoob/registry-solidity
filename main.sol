@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-contract NameIndex {
+contract Registry {
     // State variable to store a number
     mapping(address => string) public names;
 
@@ -33,7 +33,7 @@ contract NameIndex {
     }
 
     // Implement the receive function to receive token transfers
-    function receive() external payable {
+    receive() external payable {
         // Do nothing. This function is needed to receive token transfers.
     }
 }
